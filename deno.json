@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "hono": "npm:hono@^4.11.7",
+    "youtube-transcript-plus": "npm:youtube-transcript-plus@^1.1.2"
+  },
+  "deploy": {
+    "project": "2fa21d70-2cd7-43b6-ba1c-442240486cb7",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "main.ts"
+  }
+}

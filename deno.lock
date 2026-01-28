@@ -1,0 +1,37 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@std/assert@1": "1.0.17",
+    "jsr:@std/internal@^1.0.12": "1.0.12",
+    "npm:hono@4": "4.11.7",
+    "npm:hono@^4.11.7": "4.11.7",
+    "npm:youtube-transcript-plus@^1.1.2": "1.1.2",
+    "npm:youtube-transcript-plus@latest": "1.1.2"
+  },
+  "jsr": {
+    "@std/assert@1.0.17": {
+      "integrity": "df5ebfffe77c03b3fa1401e11c762cc8f603d51021c56c4d15a8c7ab45e90dbe",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.12": {
+      "integrity": "972a634fd5bc34b242024402972cd5143eac68d8dffaca5eaa4dba30ce17b027"
+    }
+  },
+  "npm": {
+    "hono@4.11.7": {
+      "integrity": "sha512-l7qMiNee7t82bH3SeyUCt9UF15EVmaBvsppY2zQtrbIhl/yzBTny+YUxsVjSjQ6gaqaeVtZmGocom8TzBlA4Yw=="
+    },
+    "youtube-transcript-plus@1.1.2": {
+      "integrity": "sha512-bLlqkA6gVVUorZpcc+THuECXyAwOpnHqW2lOav9g6gGovxAP3FCD8s9GBFVjmSl3cWWwwPPXtG/zY1nD+GvQ7A=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@1",
+      "npm:hono@^4.11.7",
+      "npm:youtube-transcript-plus@^1.1.2"
+    ]
+  }
+}
