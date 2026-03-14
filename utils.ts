@@ -1,3 +1,10 @@
+import {
+	YoutubeTranscriptVideoUnavailableError,
+	YoutubeTranscriptDisabledError,
+	YoutubeTranscriptNotAvailableError,
+	YoutubeTranscriptNotAvailableLanguageError,
+} from "youtube-transcript-plus";
+
 export const handleFetchTranscriptError = (error: Error) => {
 	if (error instanceof YoutubeTranscriptVideoUnavailableError) {
 		console.error("Video is unavailable:", error.videoId);
