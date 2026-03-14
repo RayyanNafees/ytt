@@ -1,5 +1,16 @@
-import { fetchTranscript } from "youtube-transcript-plus";
+import { fetchTranscript, CacheStrategy  } from "youtube-transcript-plus";
 import { Hono } from "hono";
+
+
+class CustomCache implements CacheStrategy {
+  async get(key: string): Promise<string | null> {
+    // Custom logic
+  }
+
+  async set(key: string, value: string, ttl?: number): Promise<void> {
+    // Custom logic
+  }
+}
 
 const app = new Hono();
 
@@ -33,7 +44,12 @@ app.get("/*", async (c) => {
               video,
             });
       }
-      const transcript = await fetchTranscript(video);
+      const transcript = await fetchTranscript(video, 
+                                               {
+                                                lang:'en',  
+                                                cache: new CustomCache(),
+                                               }
+                                              );
       const secondsTook = (Date.now() - then) / 1000;
       return c.json({
         ok: true,
