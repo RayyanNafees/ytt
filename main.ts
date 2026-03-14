@@ -3,12 +3,21 @@ import { Hono } from "hono";
 
 
 class CustomCache implements CacheStrategy {
+  constructor(){
+    await Deno.openKv().then(function(kv){
+      this.kv = kv
+    };
+
+  }
   async get(key: string): Promise<string | null> {
     // Custom logic
+    return await this.kv.get([key])
   }
 
   async set(key: string, value: string, ttl?: number): Promise<void> {
     // Custom logic
+    return await this.kv.set([key], value, ttl ? {expireIn:ttl} : undefined)
+
   }
 }
 
