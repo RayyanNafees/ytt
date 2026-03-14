@@ -1,6 +1,6 @@
-import { fetchTranscript, CacheStrategy } from "youtube-transcript-plus";
+import { fetchTranscript, } from "youtube-transcript-plus";
 import { Hono } from "hono";
-import { CustomCache, handleFetchTranscriptError } from "./utils.ts";
+import { handleFetchTranscriptError } from "./utils.ts";
 
 // Add CustomCache in fetchTrascript options
 // Reference: https://www.npmjs.com/package/youtube-transcript-plus#custom-caching
@@ -50,7 +50,7 @@ app.get("/*", async (c) => {
 	} catch (e) {
 		return c.json({
 			ok: false,
-			message: "Error Transcribing Video: " + e,
+			message: `Error Transcribing Video: ${e}`,
 			video,
 		});
 	}

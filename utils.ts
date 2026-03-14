@@ -19,7 +19,7 @@ export const handleFetchTranscriptError = (error: Error) => {
 	}
 };
 
-export class CustomCache implements CacheStrategy {
+export class _CustomCache implements CacheStrategy {
 	private kv!: Deno.Kv;
 
 	private constructor(kv: Deno.Kv) {
